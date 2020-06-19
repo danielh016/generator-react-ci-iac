@@ -1,0 +1,41 @@
+version: 2.1
+
+orbs:
+  aws-cli: circleci/aws-cli@0.1.20
+
+jobs:
+  test-and-build-staging:
+    docker:
+      - image: circleci/node:10.15.3
+    steps:
+      - checkout
+      - setup_remote_docker
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: Install dependencies
+          command: yarn install
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - node_modules
+      - run:
+          name: Test the application
+          command: yarn test
+      - run:
+          name: Build the application
+          command: yarn build
+      - persist_to_workspace:
+          root: ./
+          paths:
+            - package.json
+            - node_modules
+            - src
+            - build
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - test-and-build-staging:
+          context: S3-Static-Development

@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Daniel Hu",
+      "authorEmail": "dan3388a@gmail.com",
+      "authorUrl": "https://www.npmjs.com/~rainrush"
+    }
+  }
+}

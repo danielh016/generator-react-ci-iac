@@ -1,0 +1,90 @@
+{
+  "name": "generator-react-ci-iac",
+  "version": "0.0.0",
+  "description": "A sample generator implemented to demonstrate how generator works",
+  "homepage": "https://www.npmjs.com/package/generator-react-ci-iac",
+  "author": {
+    "name": "Daniel Hu",
+    "email": "dan3388a@gmail.com",
+    "url": "https://www.npmjs.com/~rainrush"
+  },
+  "files": [
+    "generators"
+  ],
+  "main": "generators/index.js",
+  "keywords": [
+    "react",
+    "yeoman",
+    "circleci",
+    "pulumi",
+    "eslint",
+    "yeoman-generator"
+  ],
+  "devDependencies": {
+    "cz-conventional-changelog": "3.2.0",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.6.0",
+    "eslint-config-xo": "^0.27.2",
+    "eslint-plugin-prettier": "^3.1.1",
+    "husky": "^4.2.5",
+    "jest": "^24.8.0",
+    "lint-staged": "^10.2.11",
+    "prettier": "^1.19.1",
+    "yeoman-assert": "^3.1.0",
+    "yeoman-test": "^1.7.0"
+  },
+  "engines": {
+    "npm": ">= 4.0.0"
+  },
+  "dependencies": {
+    "chalk": "^2.1.0",
+    "yeoman-generator": "^2.0.1",
+    "yosay": "^2.0.1"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "lint-staged": {
+    "*.+(js|jsx)": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.+(json|css|md)": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "eslintConfig": {
+    "extends": [
+      "xo",
+      "prettier"
+    ],
+    "env": {
+      "jest": true,
+      "node": true
+    },
+    "rules": {
+      "prettier/prettier": "error"
+    },
+    "plugins": [
+      "prettier"
+    ]
+  },
+  "scripts": {
+    "pretest": "eslint .",
+    "test": "jest"
+  },
+  "repository": "RainRush/generator-react-ci-iac",
+  "license": "MIT",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}

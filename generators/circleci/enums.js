@@ -1,0 +1,7 @@
+const TEST_BUILD_TEMPLATE_DIR = 'testBuild';
+const TEST_BUILD_DEPLOY_TEMPLATE_DIR = 'testBuildDeploy';
+
+module.exports = {
+  TEST_BUILD_TEMPLATE_DIR,
+  TEST_BUILD_DEPLOY_TEMPLATE_DIR
+};
