@@ -23,7 +23,7 @@ module.exports = class extends Generator {
     if (!this.useCircleCi.confirmed) return;
 
     const { ciTemplate } = this.templateToUse;
-    const { appName } = this.options;
+    const appName = this.options.appName || 'circleci';
     const s3BucketName = this.configInfo ? this.configInfo.s3BucketName : '';
 
     this.fs.copyTpl(

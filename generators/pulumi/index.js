@@ -18,7 +18,7 @@ module.exports = class extends Generator {
   writing() {
     if (!this.usePulumi.confirmed) return;
 
-    const { appName } = this.options;
+    const appName = this.options.appName || 'pulumi';
     const { pulumiAppName, pulumiSetS3BucketName } = this.pulumiInfo;
 
     this.fs.copy(this.templatePath(this.templateDir + '/'), this.destinationPath(`${appName}/`), {

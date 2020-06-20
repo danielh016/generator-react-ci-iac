@@ -7,7 +7,7 @@ const usePulumiPrompts = [
   }
 ];
 
-const pulumiInfoPrompts = appName => [
+const pulumiInfoPrompts = (appName = '') => [
   {
     type: 'input',
     name: 'pulumiAppName',

@@ -1,3 +1,9 @@
+## [1.0.2] - 2020-06-20
+
+### Fixed
+
+- Fixed singular template usage error
+
 ## [1.0.1] - 2020-06-20
 
 ### Changed
