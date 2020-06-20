@@ -1,6 +1,6 @@
 {
   "name": "generator-react-ci-iac",
-  "version": "0.0.0",
+  "version": "1.0.1",
   "description": "A sample generator implemented to demonstrate how generator works",
   "homepage": "https://www.npmjs.com/package/generator-react-ci-iac",
   "author": {

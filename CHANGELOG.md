@@ -1,3 +1,13 @@
+## [1.0.1] - 2020-06-20
+
+### Changed
+
+- Increased the consistency of the coding style
+
+### Removed
+
+- Removed console.logs used for debugging
+
 ## [1.0.0] - 2020-06-19
 
 ### Added

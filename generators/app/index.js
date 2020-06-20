@@ -5,8 +5,9 @@ const utils = require('./utils');
 
 module.exports = class extends Generator {
   async prompting() {
+    const { appInfoPrompts } = utils;
     this.templateDir = enums.FRONTEND_TEMPLATE_DIR;
-    this.appInfo = await this.prompt(utils.appInfoPrompts);
+    this.appInfo = await this.prompt(appInfoPrompts);
   }
 
   writing() {
@@ -34,8 +35,6 @@ module.exports = class extends Generator {
     );
 
     this.removeFiles();
-
-    console.log('appName', appName);
 
     addons.forEach(addon => {
       return composeWithFactory(addon.addonDir, appName, this);
